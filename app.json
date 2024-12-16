@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Hunter-Price",
-    "slug": "Hunter-Price",
+    "slug": "hunterprice-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rodrick_14.HunterPrice",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -25,6 +30,13 @@
     "plugins": [
       "expo-router",
       [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsDownloadToken": "sk.eyJ1Ijoicm9kcmljazE0IiwiYSI6ImNtNDBtMnZnNTFmeDUyd3B5ZjU2dDQ5dmQifQ.kOPVM4k9oAVh1Rs4EfcmGA",
+          "RNMapboxMapsVersion": "11.0.0"
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
@@ -32,10 +44,26 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Show current location on map."
+        }
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9a38a746-b074-4364-9833-6aa957b35292"
+      }
+    },
+    "owner": "rodrick_14"
   }
 }
